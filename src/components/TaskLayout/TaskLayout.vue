@@ -24,34 +24,54 @@
       </div>
       <div class="col-md-4 my-4">
         <div style="float: right">
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" @click="openModal">
             <span><i class="fas fa-plus-circle"></i></span>
           </button>
+          <AddTempateModal ref="modal"></AddTempateModal>
         </div>
-        <!-- <div
-        class="btn-group btn-group-toggle"
-        style="float: right"
-        data-toggle="buttons"
-      >
-        <label class="btn btn-primary">
-          <input type="radio" name="options" id="Calender" autocomplete="off" />
-          <i class="fas fa-calendar-alt"></i>
-        </label>
-        <label class="btn btn-primary active">
-          <input type="radio" name="options" id="Daily" autocomplete="off" v-model="checked" /> Daily
-        </label> -->
-        <!-- <label class="btn btn-primary">
-          <input type="radio" name="options" id="Weekly" autocomplete="off" />
-          Weekly
-        </label> -->
-        <!-- </div>  -->
+        <div
+          class="btn-group btn-group-toggle"
+          style="float: right"
+          data-toggle="buttons"
+        >
+          <label class="btn btn-primary">
+            <input
+              type="radio"
+              name="options"
+              id="Calender"
+              autocomplete="off"
+            />
+            <i class="fas fa-calendar-alt"></i>
+          </label>
+          <label class="btn btn-primary active">
+            <input
+              type="radio"
+              name="options"
+              id="Daily"
+              autocomplete="off"
+            />
+            Daily
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="options" id="Weekly" autocomplete="off" />
+            Weekly
+          </label>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import AddTempateModal from "../Template/AddTemplateLayout";
+
 export default {
   name: "TaskLayout",
+  components: { AddTempateModal },
+  methods: {
+    openModal() {
+      this.$refs.modal.show();
+    }, //executing the show method of child
+  },
 };
 </script>
 
