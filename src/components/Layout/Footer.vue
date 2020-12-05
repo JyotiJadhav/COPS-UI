@@ -1,5 +1,5 @@
 <template>
-  <div style="text-align: center; float:right">
+  <div style="text-align: center; float:right; padding-top:25px">
     <button class="icon-btn add-btn">
       <div class="add-icon"></div>
       <div class="btn-txt">Mission</div>

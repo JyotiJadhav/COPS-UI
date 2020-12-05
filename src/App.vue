@@ -39,7 +39,7 @@ import DailyTasks from "./components/TaskLayout/DailyTasks";
 import TaskLayout from "./components/TaskLayout/TaskLayout";
 import TaskProgress from "./components/TaskLayout/TaskProgress";
 import Footer from "./components/Layout/Footer";
-import Weekly from "./components/TaskLayout/TemplateGrid";
+import Weekly from "./components//Template/TemplateGrid";
 
 export default {
   name: "App",
