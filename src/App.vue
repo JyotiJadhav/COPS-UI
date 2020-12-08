@@ -5,19 +5,19 @@
         <Header></Header>
       </div>
     </div>
-    <div class="row" v-if="false">
+    <div class="row" v-if="type == 'Daily'">
       <div class="col-md-4">
         <TaskList></TaskList>
       </div>
       <div class="col-md-8">
-        <TaskLayout></TaskLayout>
+        <TaskLayout type="Daily" ></TaskLayout>
         <TaskProgress></TaskProgress>
         <DailyTasks></DailyTasks>
       </div>
     </div>
-     <div class="row">
-      <div class="col-md-12" v-if="true">
-        <TaskLayout></TaskLayout>
+     <div class="row" v-if="type=='Weekly'">
+      <div class="col-md-12" >
+        <TaskLayout type="Weekly" ></TaskLayout>
         <TaskProgress v-if="false"></TaskProgress>
         <Weekly></Weekly>
       </div>
@@ -33,7 +33,7 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import TaskList from "./components/TaskLayout/TaskLayout";
+import TaskList from "./components/TaskLayout/TaskList";
 import Header from "./components/Layout/Header";
 import DailyTasks from "./components/TaskLayout/DailyTasks";
 import TaskLayout from "./components/TaskLayout/TaskLayout";
@@ -52,6 +52,11 @@ export default {
     Footer,
     Weekly,
   },
+  data(){
+    return{
+      type: 'Weekly'
+    }
+  }
 };
 </script>
 

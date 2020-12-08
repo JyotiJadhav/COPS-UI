@@ -17,13 +17,17 @@
       </div>
  </div> -->
       <div class="col-md-4 my-4">
-        <select class="form-control" id="exampleSelect1">
+        <select
+          class="form-control"
+          id="exampleSelect1"
+          v-if="viewType == 'Weekly'"
+        >
           <option>Template 1</option>
           <option>Template 2</option>
         </select>
       </div>
       <div class="col-md-4 my-4">
-        <div style="float: right">
+        <div style="float: right" v-if="viewType == 'Weekly'">
           <button type="button" class="btn btn-primary" @click="openModal">
             <span><i class="fas fa-plus-circle"></i></span>
           </button>
@@ -47,13 +51,22 @@
             <input
               type="radio"
               name="options"
-              id="Daily"
+              id="daily"
+              value="Daily"
+              v-model="viewType"
               autocomplete="off"
             />
             Daily
           </label>
           <label class="btn btn-primary">
-            <input type="radio" name="options" id="Weekly" autocomplete="off" />
+            <input
+              type="radio"
+              name="options"
+              id="weekly"
+              value="Weekly"
+              v-model="viewType"
+              autocomplete="off"
+            />
             Weekly
           </label>
         </div>
@@ -71,6 +84,12 @@ export default {
     openModal() {
       this.$refs.modal.show();
     }, //executing the show method of child
+  },
+  props: ["type"],
+  data: function () {
+    return {
+      viewType: this.type,
+    };
   },
 };
 </script>

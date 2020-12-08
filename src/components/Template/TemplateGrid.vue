@@ -506,7 +506,7 @@
           :mission="mission"
           :task="task"
           :action="action"
-          :actionType="actiontype"
+          :actionType="actionType"
           :Qty="Qty"
         ></InvoiceGrid>
       </div>
